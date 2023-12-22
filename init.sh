@@ -1,16 +1,5 @@
 #!/bin/bash
 
-# 初始化yum源
-cd /etc/yum.repos.d/
-mkdir ./bak
-mv ./* ./bak
-curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
-sed -i -e '/mirrors.cloud.aliyuncs.com/d' -e '/mirrors.aliyuncs.com/d' /etc/yum.repos.d/CentOS-Base.repo
-yum -y install wget
-wget -O /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-7.repo
-yum clean all
-yum makecache fast
-yum -y update
 # 安装常用工具和开发环境
 yum -y install net-tools telnet vim git lrzsz tcpdump
 yum -y groupinstall 'development tools' 'server platform development'
