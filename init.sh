@@ -1,5 +1,6 @@
 #!/bin/bash
 
+yum -y update
 # 安装常用工具和开发环境
 yum -y install net-tools telnet vim git lrzsz tcpdump
 yum -y groupinstall 'development tools' 'server platform development'
